@@ -70,6 +70,8 @@ body{
     flex-flow: column nowrap;
     justify-content: center;
     height: 86vh;
+}
+.about__inner{
     overflow: hidden;
 }
 .carrousel{
