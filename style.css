@@ -2,13 +2,13 @@
     --font-color:#635873;
     --dark-font-color:#404040;
     --light-font-color:#d1d1d1;
-    --body-background-color:#d9b991d3;
+    --body-background-color:#6587A6;
     --nav-background-color:#f2f2f2;
     --about-text-background:#593e25c5;
     --product-info-background:#DFDCF2;
     --contact-background:#2D4459;
-    --catalog-hover-dark:#888888;
-    --catalog-hover-light:#b3b3b3;
+    --catalog-hover-dark:#213140;
+    --catalog-hover-light:#344E66;
 }
 html{
     scroll-behavior: smooth;
@@ -56,6 +56,9 @@ body{
 }
 .main{
     margin: 105px 0px 0px 0px;
+}
+.about,.catalog,.contact{
+    scroll-margin: 105px 0px 0px 0px;
 }
 .about{
     background-image: url('diseñadora.jpeg');
@@ -146,7 +149,8 @@ body{
     padding: 25px 0px;
 }
 .contact__h2{
-    margin-top: 50px;
+    margin-top: 60px;
+    margin-right: 50px;
 }
 .contact__ul{
     display: flex;
