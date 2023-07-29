@@ -9,6 +9,8 @@
     --contact-background:#2D4459;
     --catalog-hover-dark:#213140;
     --catalog-hover-light:#344E66;
+    --buttons-background-color:#e3e3e3b3;
+    --buttons-background-color-active:#d3d3d3aa;
 }
 html{
     scroll-behavior: smooth;
@@ -24,6 +26,7 @@ body{
     color: var(--font-color);
     font-size: 17px;
 }
+/* Nav */
 .nav {
     display: flex;
     position: fixed;
@@ -31,7 +34,8 @@ body{
     background-color: var(--nav-background-color);
     top: 0;
     align-items: center;
-    width: 100vw;    
+    width: 100vw;
+    padding: 0px 45px;   
 }
 .nav__logo{
     margin: 15px;
@@ -58,38 +62,46 @@ body{
     margin: 105px 0px 0px 0px;
 }
 .about,.catalog,.contact{
-    scroll-margin: 105px 0px 0px 0px;
+    scroll-margin: 104px 0px 0px 0px;
 }
+/* about */
 .about{
-    background-image: url('diseñadora.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
+    flex-flow: column nowrap;
+    justify-content: center;
     height: 86vh;
+    overflow: hidden;
 }
-.about__text-container{
-    background-color: var(--about-text-background);
-    border-radius: 10px;
-    color: var(--light-font-color);
-    margin: 15px;
-    height: min-content;
-    max-width: 800px;
-    min-width: 217px;
-    outline: none;
+.carrousel{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    height: 100%;
+    width: 300%;
+    /* transform: translateX(calc((-100%/3)*0)); */
 }
-.about__text-container:focus{
-    scale: 1.01;
+.carrousel__img{
+    width: calc(100%/3);
+    height: 100%;
 }
-.about__text-container__h1{
-    margin: 30px 15px 17px;
+.buttons{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
-.about__text-container__p{
-    margin: 15px;
+.buttons .button{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 20px;
+    border: none;
+    padding: 12px;
+    background: var(--buttons-background-color);
+    border-radius: 12px;
 }
-
+.buttons .button:active{
+    background-color: var(--buttons-background-color-active);
+}
+/* catalog */
 .catalog{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -139,6 +151,7 @@ body{
     -webkit-line-clamp: 2;
     margin:4px;
 }
+/* contact */
 .contact{
     display: flex;
     position: relative;
