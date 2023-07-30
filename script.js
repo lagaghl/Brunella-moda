@@ -2,7 +2,7 @@
 const next = document.querySelector('.next');
 const previous = document.querySelector('.previous');
 const carrousel = document.querySelector('.carrousel');
-let CarrouselIndex = 1;
+let CarrouselIndex = 0;
 
 next.addEventListener('click',()=>{
     if (CarrouselIndex == 2) CarrouselIndex = -1;
