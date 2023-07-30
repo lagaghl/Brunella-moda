@@ -6,6 +6,7 @@ const hamburger = document.querySelector('.nav__hamburger-container');
 const navUlPhone = document.querySelector('.nav__ul-phone');
 const logo = document.querySelector('.nav__logo');
 const navUl = document.querySelector('.nav__ul');
+const options = document.querySelectorAll('.product__options');
 let CarrouselIndex = 0;
 let scrollPos = 0;
 
@@ -45,3 +46,23 @@ addEventListener('scroll',()=>{
     }
     scrollPos=currentScroll;
 })
+for (const option of options) {
+    const parent =  option.parentNode;
+    parent.addEventListener('click',()=>{
+        option.classList.add('product__options-visible');
+    })
+    parent.addEventListener('blur',()=>{
+        option.classList.remove('product__options-visible');
+    })
+    option.addEventListener('click',(e)=>{
+        const parentId = parent.id;
+        let target = e.target;
+        if (target.classList.contains('product__options-buy__img')) {
+            agregarAlCarrito(parentId);
+        }else if(target.classList.contains('product__options-save__img')){
+            console.log(typeof(target.src));
+            if (target.src == 'images/logos/corazon-vacio.svg') target.src = 'images/logos/corazon-lleno.svg';
+            else target.src = 'images/logos/corazon-vacio.svg';
+        }
+    })
+}

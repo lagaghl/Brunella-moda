@@ -194,6 +194,9 @@ body{
     top: 8px;
     right: 8px;
 }
+.product__options-visible{
+    display: block;
+}
 .product__options img{
     margin: 4px;
 }
