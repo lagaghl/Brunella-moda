@@ -70,9 +70,11 @@ body{
     flex-flow: column nowrap;
     height: 86vh;
     background-color: var(--about-background);
+    position: relative;
 }
 .about__inner{
     overflow: hidden;
+    width: 100vw;
     display: flex;
     align-items: center;
 }
@@ -80,13 +82,18 @@ body{
     height: 100%;
     width: 300%;
     display: flex;
-    transform: translateX(calc((-100%/3)*1));
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform 1s ease;
 }
 .carrousel__container-img{
     display: flex;
     justify-content: space-around;
-    width: calc(100%/3);
+    flex-shrink: 0;
+    width: 100vw;
     height: 100%;
+    overflow: hidden;
 }
 .buttons{
     position: absolute;
@@ -96,6 +103,8 @@ body{
 }
 .buttons .button{
     font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 700;
     margin: 20px;
     border: none;
     padding: 12px;
@@ -107,6 +116,7 @@ body{
 }
 /* catalog */
 .catalog{
+    padding: 14px 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
@@ -125,9 +135,13 @@ body{
     scale: 1.03;
     transition: all 150ms;
 }
+.product__img-container{
+    height: 68%;
+}
 .product__img{
     border-radius: 12px 0px 0px 0px;
     width: 100%;
+    height: 100%;
 }
 .product__options{
     position: absolute;
@@ -174,22 +188,10 @@ body{
 }
 .contact__ul li{
     display: inline-block;
-    margin: 20px;
-}
-.contact__ul li:hover{
-    animation: jump 800ms infinite;
+    margin: 25px;
 }
 .contact__img{
     position: absolute;
     filter: invert();
     margin: 8px;
 }
-
-@keyframes jump {
-    0%, 100% { 
-        transform: translateY(0); 
-    }
-    52% { 
-        transform: translateY(-8px); 
-    }
-  }
