@@ -6,7 +6,7 @@
     --nav-background-color:#f2f2f2;
     --about-background:#d2d2d1;
     --product-info-background:#b9b9b9;
-    --contact-background:#2D4459;
+    --contact-background:#025930;
     --catalog-hover-dark:#7E878C;
     --catalog-hover-light:#8B94A3;
     --buttons-background-color:#e3e3e3b3;
@@ -150,8 +150,8 @@ body{
 .product__options{
     position: absolute;
     display: none;
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 8px;
 }
 .product__options img{
     margin: 4px;
@@ -196,6 +196,6 @@ body{
 }
 .contact__img{
     position: absolute;
-    filter: invert();
+    fill: var(--light-font-color);
     margin: 8px;
 }
