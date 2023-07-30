@@ -10,6 +10,18 @@ const options = document.querySelectorAll('.product__options');
 let CarrouselIndex = 0;
 let scrollPos = 0;
 
+//Functions:
+const toggleSaved = (heart)=>{
+    if (heart.classList.contains('clicked')) {
+        heart.src = 'images/logos/corazon-vacio.svg';
+    } else{
+        heart.src = 'images/logos/corazon-lleno.svg';
+    }
+    heart.classList.toggle('clicked');
+}
+
+//EventListeners:
+
 next.addEventListener('click',()=>{
     if (CarrouselIndex == 2) CarrouselIndex = -1;
     carrousel.style.transform = `translateX(calc((-100%/3)*${CarrouselIndex+1}))`;
@@ -32,7 +44,6 @@ hamburger.addEventListener('click',()=>{
         },300)
     }
 })
-
 addEventListener('scroll',()=>{
     let currentScroll = window.scrollY;
     if (currentScroll>scrollPos) { //Fue hacia abajo
@@ -48,7 +59,7 @@ addEventListener('scroll',()=>{
 })
 for (const option of options) {
     const parent =  option.parentNode;
-    parent.addEventListener('click',()=>{
+    parent.addEventListener('focus',()=>{
         option.classList.add('product__options-visible');
     })
     parent.addEventListener('blur',()=>{
@@ -56,13 +67,11 @@ for (const option of options) {
     })
     option.addEventListener('click',(e)=>{
         const parentId = parent.id;
-        let target = e.target;
-        if (target.classList.contains('product__options-buy__img')) {
+        const target = e.target;
+        if (target.classList.contains('product__buy')) {
             agregarAlCarrito(parentId);
-        }else if(target.classList.contains('product__options-save__img')){
-            console.log(typeof(target.src));
-            if (target.src == 'images/logos/corazon-vacio.svg') target.src = 'images/logos/corazon-lleno.svg';
-            else target.src = 'images/logos/corazon-vacio.svg';
+        }else if(target.classList.contains('product__save')){
+            toggleSaved(target);
         }
     })
 }
