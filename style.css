@@ -2,13 +2,13 @@
     --font-color:#635873;
     --dark-font-color:#404040;
     --light-font-color:#d1d1d1;
-    --body-background-color:#6587A6;
+    --body-background-color:#c7c7c7;
     --nav-background-color:#f2f2f2;
-    --about-text-background:#593e25c5;
-    --product-info-background:#DFDCF2;
+    --about-background:#d2d2d1;
+    --product-info-background:#b9b9b9;
     --contact-background:#2D4459;
-    --catalog-hover-dark:#213140;
-    --catalog-hover-light:#344E66;
+    --catalog-hover-dark:#7E878C;
+    --catalog-hover-light:#8B94A3;
     --buttons-background-color:#e3e3e3b3;
     --buttons-background-color-active:#d3d3d3aa;
 }
@@ -68,21 +68,23 @@ body{
 .about{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     height: 86vh;
+    background-color: var(--about-background);
 }
 .about__inner{
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 .carrousel{
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
     height: 100%;
     width: 300%;
-    /* transform: translateX(calc((-100%/3)*0)); */
+    display: flex;
+    transform: translateX(calc((-100%/3)*1));
 }
-.carrousel__img{
+.carrousel__container-img{
+    display: flex;
+    justify-content: space-around;
     width: calc(100%/3);
     height: 100%;
 }
