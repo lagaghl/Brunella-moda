@@ -19,6 +19,9 @@ const toggleSaved = (heart)=>{
     }
     heart.classList.toggle('clicked');
 }
+const addToCart = (id)=>{
+    console.log('estamos trabajando en eso XD');
+}
 
 //EventListeners:
 
@@ -69,7 +72,7 @@ for (const option of options) {
         const parentId = parent.id;
         const target = e.target;
         if (target.classList.contains('product__buy')) {
-            agregarAlCarrito(parentId);
+            addToCart(parentId);
         }else if(target.classList.contains('product__save')){
             toggleSaved(target);
         }
