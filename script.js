@@ -7,21 +7,53 @@ const navUlPhone = document.querySelector('.nav__ul-phone');
 const logo = document.querySelector('.nav__logo');
 const navUl = document.querySelector('.nav__ul');
 const options = document.querySelectorAll('.product__options');
+const catalog = document.getElementById('catalog');
 let CarrouselIndex = 0;
 let scrollPos = 0;
 
 //Functions:
+const updateFavorites = (parent)=>{
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let index = favorites.indexOf(parent.id);
+    if (index==-1) {
+        favorites.push(parent.id);
+    }else{
+        favorites.splice(index,1);
+    }
+    localStorage.setItem('favorites',JSON.stringify(favorites));
+}
+const showFavorites = ()=>{
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (favorites.length == 0) return undefined;
+    for (const favorite of favorites) {
+        const parent = document.getElementById(favorite);
+        const heart = document.querySelector(`#${favorite} .product__save`);
+        fillHeart(heart);
+        catalog.prepend(parent);
+    }
+}
+const fillHeart = (heart)=>{
+    heart.src = 'images/logos/corazon-lleno.svg';
+    heart.classList.add('clicked');
+
+}
 const toggleSaved = (heart)=>{
+    const parent = heart.parentNode.parentNode;
     if (heart.classList.contains('clicked')) {
         heart.src = 'images/logos/corazon-vacio.svg';
+        heart.classList.remove('clicked');
     } else{
-        heart.src = 'images/logos/corazon-lleno.svg';
+        fillHeart(heart)
+        catalog.prepend(parent);
     }
-    heart.classList.toggle('clicked');
+    updateFavorites(parent);
 }
 const addToCart = (id)=>{
     console.log('estamos trabajando en eso XD');
 }
+//Mostrar los favoritos:
+
+showFavorites();
 
 //EventListeners:
 
