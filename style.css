@@ -126,6 +126,7 @@ body{
     border-radius: 12px 0px;
     position: relative;
     margin: 12px;
+    cursor: pointer;
 }
 .catalog__product:hover{
     box-shadow: 3px 3px 5px var(--catalog-hover-light);
