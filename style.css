@@ -40,6 +40,7 @@ body{
 }
 .nav__logo{
     margin: 15px 45px;
+    transition: margin 0.2s ease;
 }
 .nav__hamburger-container{
     display: none;
@@ -68,6 +69,7 @@ body{
     justify-content: end;
     flex-grow: 1;
     margin: 25px 45px 0px;
+    transition: margin 0.2s ease;
 }
 .nav__ul-phone{
     display: none;
@@ -79,7 +81,7 @@ body{
     margin: 25px 0;
     padding: 5px;
     background-color: var(--nav-background-color);
-    transition: opacity 300s forwards;
+    transition: top 0.2s ease;
 }
 .nav__ul-li{
     opacity: 0.7;
