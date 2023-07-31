@@ -18,17 +18,3 @@ hamburger.addEventListener('click',()=>{
         },300)
     }
 })
-addEventListener('scroll',()=>{
-    let currentScroll = window.scrollY;
-    if (currentScroll>scrollPos) { //Fue hacia abajo
-        logo.style.margin = '2px 45px';
-        navUl.style.margin = '15px 45px 0px';
-        navUlPhone.style.top = '50px'
-    }else{
-        logo.style.margin = '15px 45px';
-        navUl.style.margin = '25px 45px 0px';
-        navUlPhone.style.top = '80px'
-    }
-    scrollPos=currentScroll;
-})
-

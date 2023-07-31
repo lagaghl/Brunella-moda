@@ -11,6 +11,7 @@
     --catalog-hover-light:#8B94A3;
     --buttons-background-color:#e3e3e3b3;
     --buttons-background-color-active:#d3d3d3aa;
+    --price-color:#067f2d;
 }
 html{
     scroll-behavior: smooth;
@@ -213,7 +214,7 @@ body{
 .product__price{
     margin: 0px 4px;
     font-size: 14px;
-    color: #067f2d;
+    color: var(--price-color);
 }
 .product__description{
     display: -webkit-box;
