@@ -194,6 +194,7 @@ body{
     border-top: 2px solid var(--catalog-hover-dark);
     display: flex;
     justify-content: end;
+    margin: 30px;
     color: var(--price-color);
 }
 /* keyframes */
